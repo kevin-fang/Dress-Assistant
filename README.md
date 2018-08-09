@@ -52,7 +52,7 @@ update the Arduino with your current WiFi Network ID & password
 Upload the code to the arduino, and open the Serial monitor to obtain the IP address of your MKR1000.
 It will take a while to get the IP address if the connection is not fast.
 
-#### Setup Patient's View
+## Setup Patient's View
 navigate to the directory: Dress-Assistant/Dress-App
 open the terminal
 change install.command and run.command to execuatable files to support one-click installation:
@@ -68,7 +68,7 @@ It is a requirement for caregiver's computer and patient's computer to send mess
 click run.command, input local IP, and run the server
 open <LocalIP>:3000/patient in firefox 
 
-#### Setup Caregiver's View
+## Setup Caregiver's View
 Then we should setup caregiver's computer:
 
 > Cake sure caregiver's computer is in the same network with the patient's computer.
@@ -80,13 +80,13 @@ Caregiver should be able to the change light by clicking the button navbar and d
 
 Caregiver can save notes and advices on caregiver's view.
 
-#### Todo:
+# Todo:
 1. One-click installation: compiled Arduino code, installed package and pre-configed IP address of your MKR1000 and local IP Address.
 2. Use nodeJS/python to control the microphone.
 3. append data to the logfile.
 4. collect user case and feedback. 
 
-#### License:
+# License:
 License Under the MIT licenses
 https://en.wikipedia.org/wiki/MIT_License
 
