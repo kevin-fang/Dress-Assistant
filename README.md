@@ -31,10 +31,11 @@ https://github.com/JeffCX/Dress-Assistant.git
 https://www.youtube.com/watch?v=aghWRdNapKU&feature=youtu.be
 
 #### Set up Arduino
-To begin, first we should plug in the dressor via USBfrom from the drawer.
+To begin, first we should plug in the dressor via USB from the drawer.
 First we should setup patient's computer. 
 
-> Make sure NodeJS (https://nodejs.org/en/),
+> Make sure NodeJS (https://nodejs.org/en/).
+> Make sure you select the stable and secure network.
 > Firefox(https://www.mozilla.org/en-US/firefox/) are installed.
 > Firefox browser is used because it allows programmer to use JS to play the sound file. 
 
@@ -52,42 +53,44 @@ update the Arduino with your current WiFi Network ID & password
 > Make sure the board is set to: Arduino/Genuino MKR1000
 > Make sure the port is set to: /dev/cu.usbmodem1451 (Arduino/Genuino MKR 1000)
 
-Upload the code to the arduino, and open the Serial monitor to obtain the IP address of your MKR1000.
-It will take a while to get the IP address if the connection is not fast.
+> Upload the code to the arduino
+> open the Serial monitor to obtain the IP address of your MKR1000.
+> It will take a while to get the IP address if the connection is not fast.
 
 ## Setup Patient's View
-navigate to the directory: Dress-Assistant/Dress-App
-open the terminal
-change install.command and run.command to execuatable files to support one-click installation:
+> navigate to the directory: Dress-Assistant/Dress-App
+> open the terminal under this directory
+> change install.command and run.command to execuatable files to support one-click installation
 
 	chmod +x install.command
 	chmod +x run.command 
 	
-click install.command to install all packages 
-Google "what is my IP" and copy the local IP 
+> click install.command to install all packages.
+> To get the IPv4 local IP: Open System Preferences.
+> Open network and click advanced setting 
+> Click ICP/IP and obtain IPv4 Address
 
-It is a requirement for caregiver's computer and patient's computer to send messages in a local network.
+It is a requirement for caregiver's computer and patient's computer to send messages in a local network using IPv4 address.
 
-click run.command, input local IP, and run the server
-open <LocalIP>:3000/patient in firefox 
+> click run.command, input the IPv4 local IP, and run the server
+> open <LocalIP>:3000/patient in firefox 
 
 ## Setup Caregiver's View
 Then we should setup caregiver's computer:
 
-> Cake sure caregiver's computer is in the same network with the patient's computer.
-> Cavigate the browser and open  <LocalIP>:3000 in firefox
-> Copy IP adress of your MKR1000 to the input box on the top-left corner 
-Click Set.
+> Make sure caregiver's computer is in the same network with the patient's computer.
+> Open the browser and open <LocalIP>:3000 in firefox
+> Copy IP adress of arduino serial port monitor to the input box on the top-left corner 
+> Click Set.
 
-Caregiver should be able to the change light by clicking the button navbar and deliver instructions by clicking the build-in instruciton on the left. 
+Caregiver should be able to the change light by clicking the button navbar and deliver instructions by clicking the build-in instruction on the left .The timestamp of button click and instruciton click will be recorded on the log file.
 
 Caregiver can save notes and advices on caregiver's view.
 
 # Todo:
 1. One-click installation: compiled Arduino code, installed package and pre-configed IP address of your MKR1000 and local IP Address.
 2. Use nodeJS/python to control the microphone.
-3. append data to the logfile.
-4. collect user case and feedback. 
+3. Conduct user study and collect user's feedback. 
 
 # License:
 License Under the MIT licenses
