@@ -1,0 +1,39 @@
+  .third-width {
+            width:100%;
+            margin-top:3vh;
+            
+        }
+
+        textarea:hover{
+          outline: none;
+        }
+
+        .bg{
+          background-image:url("/img/bg.jpg");
+          width:100vw;
+          height:100vh;
+          background-repeat: no-repeat;
+          background-size: cover;
+          
+        }
+
+        .txt{
+          font-size:3rem;
+          margin-top:3vh;
+         
+        }
+
+        .txt > input{
+          display: inline-block;
+          width:80%;
+        }
+
+
+
+        .txt > button{
+           display: inline-block;
+          width:10%;
+
+        }
+
+       

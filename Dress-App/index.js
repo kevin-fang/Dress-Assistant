@@ -82,7 +82,7 @@ var file = new(static.Server)();
     var app = applet.listen(port,LocalIP,()=>{
         console.log(`server is up at`)
         console.log(`${LocalIP}:3000/ for caregiver's view`)
-         console.log(`${LocalIP}:3000/ for caregiver's view`)
+         console.log(`${LocalIP}:3000/patient for patient's view`)
     });
 
 
@@ -189,7 +189,7 @@ applet.get("/patient",(req,res)=>{
             console.log(data)
         })
         
-        socket.on("jiba",function(data){
+        socket.on("saveNotes",function(data){
             var date = new Date()
             var date = date.toLocaleString()
             fs.appendFile("notes.txt",date+"\n"+data.data+"\n",(e)=>{

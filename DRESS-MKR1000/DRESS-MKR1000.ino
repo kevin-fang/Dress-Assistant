@@ -18,8 +18,8 @@
 // the IP address for the shield:
 // IPAddress ip(192,168,1,116);  
 
-char ssid[] = "smart_environment";      //  your network SSID (name)
-char pass[] = "research";   // your network password
+char ssid[] = "";      //  your network SSID (name)
+char pass[] = "";   // your network password
 int keyIndex = 0;                 // your network key Index number (needed only for WEP)
 
 int ledpin = 6;
