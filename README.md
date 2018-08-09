@@ -27,8 +27,7 @@ Nyu-x lab researcher Jeff Cui works closely with Lisa Logan Groom and makes furt
 https://github.com/JeffCX/Dress-Assistant.git
 
 # Installation on Mac
-#### Set up Arduino
-Video Tutorial:
+#### Video Tutorial
 https://www.youtube.com/watch?v=aghWRdNapKU&feature=youtu.be
 
 #### Set up Arduino
