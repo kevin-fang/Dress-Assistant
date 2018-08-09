@@ -1,106 +1,89 @@
-
+<!--Documentation is like sex, when it is good, it is really good.-->
+<!--When it is bad, it is better than nothing-->
+<!--Please feel free to use any template language to seperate this index.html into smaller components-->
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Dress Assitant</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!--responsive screen-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <script src="https://simplewebrtc.com/latest-v2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn-orig.socket.io/socket.io-1.7.3.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     
     <script src="js/bootstrap.min.js"></script>
+
+    <!--javascript collection of helper functions-->
     <script src="js/indexButtonHandler.js"></script>
 
+    <!--Customized Style-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" href="/img/heart.ico" type="image/x-icon"/>
-     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!--bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style type="text/css">
-       .form-control{
-          width:50%;
-        }
 
-        .btn-gan{
-          width:30%;
-          margin-right:5%;
-        }
-    </style>
+    <!--align server input box and "set button"-->
 </head>
-
 <body>
 <div class="bg">
 <div class='container-fluid'>
     <div class='row'>
+       <!--Server input box, set button-->
         <div class="col-sm-4 text-center align-middle txt">
-      
-      
-        <div class="form-group">
-           <button class="btn btn-primary btn-gan" style="display: inline;" onclick="setIP()">Set</button>
-          <input type="text" class="form-control" id="IP"  style="display: inline;" aria-describedby="emailHelp" placeholder="Server's IP">
-         
+          <div class="form-group">
+             <button class="btn btn-primary btn-short" style="display: inline;" onclick="setIP()">Set</button>
+            <input type="text" class="form-control" id="IP"  style="display: inline;width:50%;" aria-describedby="emailHelp" placeholder="Server's IP">
+           
+          </div>
         </div>
 
-        </div>
- 
-        
-
-         <div class='col-sm-8' style=" margin-top:5vh;margin-bottom: 3vh;">
+        <div class='col-sm-8' style=" margin-top:5vh;margin-bottom: 3vh;">
+            <!--navbar: shirt, pants, shoes, shirts,other, save notes, save advices-->
             <div class="nav" id="v-pills-tab" role="tablist">
               <a class="nav-link active " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-
-                   <!--shirt-->
+                   <!--Shirt Instruction-->
                    <input class="btn btn-primary" id="SHIRTbutton" type="submit" name="button" onclick="clickShirt();" value="SHIRT" />
-
               </a>
 
               <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-
+                 <!--Pants Instruction-->
                  <input class="btn btn-primary btn-xl" id="PANTSbutton" type="submit" name="button" onclick="clickPants();" value="PANTS" />
-
               </a>
 
               <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                 <!--Socks Instruction-->
                  <input class="btn btn-primary btn-xl" id="SOCKSbutton" type="submit" name="button" onclick="clickSocks();" value="SOCKS" />
-
-
               </a>
+
               <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                          <input class="btn btn-primary btn-xl" id="SHOESbutton" type="submit" name="button" onclick="clickShoes();" value="SHOES" />
-
-
+                  <!--Shoes Instruction-->
+                  <input class="btn btn-primary btn-xl" id="SHOESbutton" type="submit" name="button" onclick="clickShoes();" value="SHOES" />
               </a>
 
-               
-
-               
-               
-
-                 <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-encourage" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                         
+               <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-encourage" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                 <!--Other Instruction-->  
                  <input class="btn btn-primary btn-xl" id="PRAISEbutton" type="submit" name="button" value="Other" />
-                        
+               </a>
 
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-talk" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                  <!--Save notes--> 
+                  <input class="btn btn-primary btn-xl" id="unique" type="submit" name="button" value="Save notes"/>
+                </a>
 
-                 </a>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-encourage" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    <!--Save advice and feedback--> 
+                   <button type="button" class="btn btn-primary btn-xl" data-toggle="modal" data-target="#exampleModal">
+                    Survey
+                   </button>
 
-                 <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-talk" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                <input class="btn btn-primary btn-xl" id="unique" type="submit" name="button" value="Save notes"/>
-
-
-                   <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-encourage" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-               
-
-                 <button type="button" class="btn btn-primary btn-xl" data-toggle="modal" data-target="#exampleModal">
-                  Survey
-                </button>
-
-
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                   <!--Popup Modal-->
+                   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -108,12 +91,13 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
-                      </div>
+                        </div>
 
-                      <div class="modal-body text-center">
-                        <h5 style="display: block;width:100%;text-align: center;margin-top: 3vh;margin-bottom:3vh;"> The device is helpful for the patient?</h5>
-                        
-                       <div class="btn-group" role="group" aria-label="First group">
+                        <div class="modal-body text-center">
+                          <h5 style="display: block;width:100%;text-align: center;margin-top: 3vh;margin-bottom:3vh;"> The device is helpful for the patient?</h5>
+
+                        <!--Face images to represent score from 5 - 1 (very helpful to not helpful)-->
+                         <div class="btn-group" role="group" aria-label="First group">
                             <button type="button" id="score5" class="btn"><img src="/img/face/5.png" style="width:40%;"></button>
                             <button type="button" id="score4" class="btn"><img src="/img/face/4.png" style="width:40%;"></button>
                             <button type="button" id="score3" class="btn"><img src="/img/face/3.png" style="width:40%;"></button>
@@ -123,192 +107,168 @@
                        
                                                 
                         
-                      </div>
+                         </div>
 
-                      <hr>
+                         <hr>
 
-                       <div class="">
-                        <h5 style="display: block;width:100%;text-align: center;">Share your adivces</h5>
-                        <textarea style="display: block;width:80%;height:30vh;margin-left: 10%;" id="adivces">
+                        <!--Save advices-->
+                         <div class="">
+                          <h5 style="display: block;width:100%;text-align: center;">Share your adivces</h5>
+                          <textarea style="display: block;width:80%;height:30vh;margin-left: 10%;" id="adivces">
 
+                  
+                          </textarea>
                           
-                        </textarea>
-                        
-                      </div>
+                          </div>
                      
 
+                          <!--Close the modal/Save changes to advice.txt-->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="saveAdivce">Save changes</button>
+                          </div>
 
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="saveAdivce">Save changes</button>
+                          <!--js helper funcitons to get the score-->
+                          <script type="text/javascript">
+                            window.onload=function(){
+                               var good = 5
+                            var score5 = document.getElementById("score5")
+                            score5.onclick=function(){
+                              good = 5
+                            }
+                            var score4 = document.getElementById("score4")
+                            score4.onclick=function(){
+                              good = 4
+                            }
+                            var score3 = document.getElementById("score3")
+                            score3.onclick=function(){
+                              good = 3
+                            }
+                            var score2 = document.getElementById("score2")
+                            score2.onclick=function(){
+                              good = 2
+                            }
+                            var score1 = document.getElementById("score1")
+                            score1.onclick=function(){
+                              good = 1
+                            }
+                            var adivces = document.getElementById("adivces")
+                            var saveAdivce = document.getElementById("saveAdivce")
+
+                            saveAdivce.onclick=function(){
+                              socket.emit("saveAdvice",{
+                                data:good,
+                                notes:adivces.value.trim()
+                              })
+                            }
+                            }                                
+                          </script>
+                        </div>
                       </div>
+                </a>
 
-                      <script type="text/javascript">
-                        window.onload=function(){
-                           var good = 5
-                        var score5 = document.getElementById("score5")
-                        score5.onclick=function(){
-                          good = 5
-                        }
-                        var score4 = document.getElementById("score4")
-                        score4.onclick=function(){
-                          good = 4
-                        }
-                        var score3 = document.getElementById("score3")
-                        score3.onclick=function(){
-                          good = 3
-                        }
-                        var score2 = document.getElementById("score2")
-                        score2.onclick=function(){
-                          good = 2
-                        }
-                        var score1 = document.getElementById("score1")
-                        score1.onclick=function(){
-                          good = 1
-                        }
-                        var adivces = document.getElementById("adivces")
-                        var saveAdivce = document.getElementById("saveAdivce")
-
-                        saveAdivce.onclick=function(){
-                          socket.emit("saveAdvice",{
-                            data:good,
-                            notes:adivces.value.trim()
-                          })
-                        }
-                        }                                
-                      </script>
-                    </div>
-                  </div>
+                  
                 </div>
 
 
                  </a>
 
 
-                        
-
-
+                
               </a>
-
-
-                 
             </div>
         </div>
 
          <div class='col-sm-4'>
             <div class="tab-content" id="v-pills-tabContent">
+              <!-- Shirt Instruction-->
               <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <!-- shirt buttons-->
                    <div class="buttonlist" id="shirtbuttons" style="display:none">
                         <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(0)'>Open the drawer with the green light</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(1)'>Take out the shirt</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(2)'>Open the shirt</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(3)'>Turn the shirt around</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(4)'>Push your arm through the opening hole on one side</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(5)'>Now put your other arm through <br />the opening hole on the other side</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(6)'>Bring the sides of the shirt together in front of you</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(7)'>Line up the buttons with the button holes</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(8)'>Push the buttons through the holes</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(1)'>Take out the shirt</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(2)'>Open the shirt</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(3)'>Turn the shirt around</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(4)'>Push your arm through the opening hole on one side</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(5)'>Now put your other arm through <br />the opening hole on the other side</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(6)'>Bring the sides of the shirt together in front of you</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(7)'>Line up the buttons with the button holes</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(8)'>Push the buttons through the holes</button>
                      </div>
               </div>
 
-             <!--pants-->
+              <!--Pants Instruction-->
               <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">  
                 <div class="buttonlist" id="pantsbuttons" style="display:none">
                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(9)'>Open the drawer with the green light</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(10)'>Take out the pants</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(11)'>Hold the pants in front of your legs</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(12)'>Turn the pants around</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(13)'>Sit on the chair</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(14)'>Put one leg in the pant</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(15)'>Put your other leg in the pant</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(16)'>Pull the pants up so you see your feet</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(17)'>Stand up</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(18)'>Zip up the pants</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(19)'>Button the pants</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(10)'>Take out the pants</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(11)'>Hold the pants in front of your legs</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(12)'>Turn the pants around</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(13)'>Sit on the chair</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(14)'>Put one leg in the pant</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(15)'>Put your other leg in the pant</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(16)'>Pull the pants up so you see your feet</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(17)'>Stand up</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(18)'>Zip up the pants</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(19)'>Button the pants</button>
                 </div>
               </div>
 
-              <!--socks-->
+              <!--socks Instructions-->
               <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-
                     <div class="buttonlist" id="socksbuttons" style="display:none">
                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(20)'>Open the drawer with the green light</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(21)'>Take out the socks</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(22)'>Sit on the chair</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(23)'>Put on the socks</button>
+                      <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(21)'>Take out the socks</button>
+                      <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(22)'>Sit on the chair</button>
+                      <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(23)'>Put on the socks</button>
                     </div>
               </div>
 
-              <!--shoes-->
+              <!--Shoes Instructions-->
               <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">          
                     <div class="buttonlist" id="shoesbuttons" style="display:none">
                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(24)'>Open the drawer with the green light</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(25)'>Take out the shoes</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(26)'>Sit on the chair</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(27)'>Put on the shoes</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(25)'>Take out the shoes</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(26)'>Sit on the chair</button>
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(27)'>Put on the shoes</button>
                     </div>
                 </div>
 
-             
-
-               <div class="tab-pane fade" id="v-pills-talk" role="tabpanel" aria-labelledby="v-pills-settings-tab">          
-                    <p id='talkStatus'></p>
-              </div>
-
+              <!--Other Instructions-->
               <div class="tab-pane fade" id="v-pills-encourage" role="tabpanel" aria-labelledby="v-pills-settings-tab">          
                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(28)'>Open the drawer with the green light</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(29)'>Take out the glasses</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(30)'>Put on the glasses</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(31)'>Take off your pajamas</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(32)'>Take out the underwear</button>
-<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(33)'>Put on the underwear</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(29)'>Take out the glasses</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(30)'>Put on the glasses</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(31)'>Take off your pajamas</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(32)'>Take out the underwear</button>
+                    <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(33)'>Put on the underwear</button>
               </div>
 
-              <div class="tab-pane fade" id="v-pills-video" role="tabpanel" aria-labelledby="v-pills-settings-tab">          
-                    video 
-              </div>
+             
             </div>
         </div>
 
-
+        <!--takes notes-->
         <div class="col-sm-8">
-           <textarea style="width:85%;margin-left:5%;opacity:0.7;height:75vh;border:3px solid blue;padding-top:30px;font-weight: bolder;" id="notes">
+           <textarea class="notes" id="notes">
               FEEL FREE TO TAKE NOTES HERE
-
            </textarea>
-
-        </div>
-
-       
-
-       <script type="text/javascript">
-                    
-                    var unique = document.getElementById("unique")
-                    unique.onclick=function(){
-                      alert("save notes")
-                      socket.emit("saveNotes",{
-                        data:document.getElementById("notes").value.trim()
-                      })
-                     
-                    }
-                    
-                   
-                  </script>
-
-
-                        
-       
+            <!--save notes helper functions-->
+           <script type="text/javascript">       
+                var unique = document.getElementById("unique")
+                unique.onclick=function(){
+                  alert("save notes")
+                  socket.emit("saveNotes",{
+                    data:document.getElementById("notes").value.trim()
+                  })
+                }  
+            </script>
+        </div>  
     </div>
 </div>
 
-
-
-
-
-  <script src="js/jquery-3.2.0.min.js"></script>
-  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--JQuery and bootstrap-->
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </div>
 </body>
 </html>

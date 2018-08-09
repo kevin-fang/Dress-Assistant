@@ -11,7 +11,8 @@
         .bg{
           background-image:url("/img/bg.jpg");
           width:100vw;
-          height:100vh;
+          height:100%;
+          min-height: 100vh;
           background-repeat: no-repeat;
           background-size: cover;
           
@@ -36,4 +37,17 @@
 
         }
 
-       
+         .form-control-short{
+          width:50%;
+
+        }
+
+        .btn-short{
+          width:30%;
+          margin-right:5%;
+        }
+
+        .notes{
+          width:85%;margin-left:5%;opacity:0.7;height:75vh;padding-top:8vh;padding-bottom:8vh;font-weight: bolder;
+        }
+
