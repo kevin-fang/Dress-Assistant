@@ -1,0 +1,97 @@
+Wed Aug 08 2018 10:46:10 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 10:46:10 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 10:46:11 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 10:46:11 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 10:49:13 GMT-0400 (EDT) --- Check In alert displayed
+Wed Aug 08 2018 10:49:13 GMT-0400 (EDT) --- Check In cancelled
+Wed Aug 08 2018 10:51:57 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 10:51:57 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 10:51:58 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 10:51:59 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 10:52:41 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 10:52:43 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 10:52:46 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 10:52:48 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 10:55:14 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 10:55:15 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 10:55:16 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 10:55:16 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 11:03:24 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:03:25 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:03:26 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:03:26 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 11:03:50 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:03:51 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:03:51 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:03:52 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 11:04:57 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:04:59 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:05:02 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 11:05:03 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:05:03 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:05:04 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:05:24 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:05:25 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:05:26 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:06:03 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:06:04 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:06:04 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:06:05 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 11:06:05 GMT-0400 (EDT) --- praise button pushed
+Wed Aug 08 2018 11:06:06 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 11:06:08 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:06:08 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:06:43 GMT-0400 (EDT) --- Check In alert displayed
+Wed Aug 08 2018 11:06:45 GMT-0400 (EDT) --- Check In accepted
+Wed Aug 08 2018 11:06:54 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:07:35 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:07:36 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:07:37 GMT-0400 (EDT) --- Shoes button clicked
+Wed Aug 08 2018 11:07:44 GMT-0400 (EDT) --- Check In alert displayed
+Wed Aug 08 2018 11:07:47 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:08:17 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:08:18 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:08:19 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:08:20 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:08:21 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:08:41 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:08:42 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:08:42 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:08:44 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:09:22 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:09:24 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:10:11 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:10:12 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:11:08 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:11:09 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:11:16 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:11:34 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:12:59 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:14:14 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:14:16 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:14:16 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:14:17 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:14:18 GMT-0400 (EDT) --- Socks button clicked
+Wed Aug 08 2018 11:14:18 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:14:18 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:14:22 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:14:23 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:14:23 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:14:27 GMT-0400 (EDT) --- Pants button clicked
+Wed Aug 08 2018 11:14:28 GMT-0400 (EDT) --- Shirt button clicked
+Wed Aug 08 2018 11:28:10 GMT-0400 (EDT) --- Check In alert displayed
+Wed Aug 08 2018 11:28:13 GMT-0400 (EDT) --- Check In accepted
+Wed Aug 08 2018 11:31:13 GMT-0400 (EDT) --- Check In alert displayed
+Wed Aug 08 2018 11:31:15 GMT-0400 (EDT) --- Check In accepted
+Wed Aug 08 2018 11:48:47 GMT-0400 (EDT) --- praise button pushed
+Wed Aug 08 2018 11:51:10 GMT-0400 (EDT) --- praise button pushed
+Wed Aug 08 2018 15:57:47 GMT-0400 (EDT) --- praise button pushed
+Wed Aug 08 2018 16:03:05 GMT-0400 (EDT) --- Check In alert displayed
+Wed Aug 08 2018 16:03:14 GMT-0400 (EDT) --- Check In accepted
+Wed Aug 08 2018 16:06:14 GMT-0400 (EDT) --- Check In alert displayed
+Wed Aug 08 2018 16:06:16 GMT-0400 (EDT) --- Check In accepted
+Wed Aug 08 2018 16:09:16 GMT-0400 (EDT) --- Check In alert displayed
+Wed Aug 08 2018 16:09:17 GMT-0400 (EDT) --- Check In accepted
+Wed Aug 08 2018 17:56:59 GMT-0400 (EDT) --- Check In alert displayed
+Wed Aug 08 2018 17:57:02 GMT-0400 (EDT) --- Check In accepted
+Wed Aug 08 2018 20:09:33 GMT-0400 (EDT) --- praise button pushed

@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Caretakers's View</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://simplewebrtc.com/latest-v2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn-orig.socket.io/socket.io-1.7.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+        
+
+        .third-width {
+            width:100%;
+            margin-top:3vh;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <script src="js/indexSocket.js"></script>
+    <script src="js/indexWebRTC.js"></script>
+    <script src="js/indexButtonHandlers.js"></script>
+    <script type="text/javascript">
+      var socket = io()
+      function playFile(index){
+        socket.emit("playAudio",{data:index})
+      }
+    </script>
+   
+
+<div class='container-fluid'>
+    <div class='row'>
+       
+
+         <div class='col-sm-12' style=" margin-top:10vh;">
+            <div class="nav" id="v-pills-tab" role="tablist">
+              <a class="nav-link active " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+
+                   <!--shirt-->
+                   <input class="btn btn-primary" id="SHIRTbutton" type="submit" name="button" onclick="shirt();" value="SHIRT" />
+
+              </a>
+
+              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+
+                 <input class="btn btn-primary btn-xl" id="PANTSbutton" type="submit" name="button" onclick="pants();" value="PANTS" />
+
+              </a>
+
+              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                 <input class="btn btn-primary btn-xl" id="SOCKSbutton" type="submit" name="button" onclick="socks();" value="SOCKS" />
+
+
+              </a>
+              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                          <input class="btn btn-primary btn-xl" id="SHOESbutton" type="submit" name="button" onclick="shoes();" value="SHOES" />
+
+
+              </a>
+
+               
+
+               <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-talk" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                         <input class="btn btn-primary btn-xl" id="TALKbutton" type="submit" name="button" onclick="toggleTalk();" value="Unmute"/>
+                        
+
+
+              </a>
+
+               
+
+                 <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-encourage" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                         
+                 <input class="btn btn-primary btn-xl" id="PRAISEbutton" type="submit" name="button" onclick="praise();" value="Other" />
+                        
+
+
+                 </a>
+
+                  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-video" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                         
+                      <input class="btn btn-primary btn-xl" id="getVideoBut" type="submit" name="button" onclick="getVideoSources();" value="Get Video" />
+                        
+
+
+                 </a>
+            </div>
+        </div>
+
+
+         <div class="col-sm-8">
+            <iframe style="width:100%;height:40vh;" src="/RecordRTC-master/index.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            <iframe style="width:100%;height:40vh;" src=" https://chat-app-jeffcx.herokuapp.com/" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+        </div>
+
+         <div class='col-sm-4'>
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <!-- shirt buttons-->
+                   <div class="buttonlist" id="shirtbuttons" style="display:none">
+                        <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(0)'>Open the drawer with the green light</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(1)'>Take out the shirt</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(2)'>Open the shirt</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(3)'>Turn the shirt around</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(4)'>Push your arm through the opening hole on one side</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(5)'>Now put your other arm through the opening hole on the other side</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(6)'>Bring the sides of the shirt together in front of you</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(7)'>Line up the buttons with the button holes</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(8)'>Push the buttons through the holes</button>
+                     </div>
+              </div>
+
+             <!--pants-->
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">  
+                <div class="buttonlist" id="pantsbuttons" style="display:none">
+                   <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(9)'>Open the drawer with the green light</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(10)'>Take out the pants</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(11)'>Hold the pants in front of your legs</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(12)'>Turn the pants around</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(13)'>Sit on the chair</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(14)'>Put one leg in the pant</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(15)'>Put your other leg in the pant</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(16)'>Pull the pants up so you see your feet</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(17)'>Stand up</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(18)'>Zip up the pants</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(19)'>Button the pants</button>
+                </div>
+              </div>
+
+              <!--socks-->
+              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+
+                    <div class="buttonlist" id="socksbuttons" style="display:none">
+                       <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(20)'>Open the drawer with the green light</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(21)'>Take out the socks</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(22)'>Sit on the chair</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(23)'>Put on the socks</button>
+                    </div>
+              </div>
+
+              <!--shoes-->
+              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">          
+                    <div class="buttonlist" id="shoesbuttons" style="display:none">
+                       <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(24)'>Open the drawer with the green light</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(25)'>Take out the shoes</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(26)'>Sit on the chair</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(27)'>Put on the shoes</button>
+                    </div>
+                </div>
+
+             
+
+               <div class="tab-pane fade" id="v-pills-talk" role="tabpanel" aria-labelledby="v-pills-settings-tab">          adfdasfdsfdsfsd
+                    <p id='talkStatus'></p>
+              </div>
+
+              <div class="tab-pane fade" id="v-pills-encourage" role="tabpanel" aria-labelledby="v-pills-settings-tab">          
+                   <button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(28)'>Open the drawer with the green light</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(29)'>Take out the glasses</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(30)'>Put on the glasses</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(31)'>Take off your pajamas</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(32)'>Take out the underwear</button>
+<button class='btn btn-primary btn-success btn-xl third-width' onclick='playFile(33)'>Put on the underwear</button>
+              </div>
+
+              <div class="tab-pane fade" id="v-pills-video" role="tabpanel" aria-labelledby="v-pills-settings-tab">          
+                    video 
+              </div>
+            </div>
+        </div>
+
+
+       
+
+       
+
+
+
+       
+    </div>
+</div>
+
+
+
+
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>

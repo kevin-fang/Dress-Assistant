@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <script src="https://cdn-orig.socket.io/socket.io-1.7.3.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	var audioFiles = ['Open the drawer with the green light', 'Take out the shirt', 'Open the shirt', 'Turn the shirt around', 'Push your arm through the opening hole on one side', 'Now put your other arm through the opening hole on the other side', 'Bring the sides of the shirt together in front of you', 'Line up the buttons with the button holes', 'Push the buttons through the holes', 'Open the drawer with the green light', 'Take out the pants', 'Hold the pants in front of your legs', 'Turn the pants around', 'Sit on the chair', 'Put one leg in the pant', 'Put your other leg in the pant', 'Pull the pants up so you see your feet', 'Stand up', 'Zip up the pants', 'Button the pants', 'Open the drawer with the green light', 'Take out the socks', 'Sit on the chair', 'Put on the socks', 'Open the drawer with the green light', 'Take out the shoes', 'Sit on the chair', 'Put on the shoes', 'Open the drawer with the green light', 'Take out the glasses', 'Put on the glasses', 'Take off your pajamas', 'Take out the underwear', 'Put on the underwear']
+	var socket = io()
+	
+	console.log("gan")
+	socket.on("connect",function(){
+		socket.on("play",function(data){
+			console.log(data.data)
+			
+			console.log(audioFiles[data.data])
+		
+			//play file
+		})
+	})
+</script>
+</body>
+</html>
