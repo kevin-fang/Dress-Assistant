@@ -28,6 +28,10 @@ https://github.com/JeffCX/Dress-Assistant.git
 
 # Installation on Mac
 #### Set up Arduino
+Video Tutorial:
+https://www.youtube.com/watch?v=aghWRdNapKU&feature=youtu.be
+
+#### Set up Arduino
 To begin, first we should plug in the dressor via USBfrom from the drawer.
 First we should setup patient's computer. 
 
