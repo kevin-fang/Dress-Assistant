@@ -1,0 +1,5 @@
+1. Smart-enviornment is slow. Make sure no one is using it if we want to test our dress system.
+
+2. It will take a while to connect to the smart environment network.
+
+3. In a fixed period of time, the smart_environemnt network will disconnect your computer so make sure both caregiver's computer and patient's computer are in the same network

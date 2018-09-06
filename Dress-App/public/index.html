@@ -13,7 +13,7 @@
     
     <script src="https://simplewebrtc.com/latest-v2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn-orig.socket.io/socket.io-1.7.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     
     <script src="js/bootstrap.min.js"></script>
@@ -71,10 +71,8 @@
                  <input class="btn btn-primary btn-xl" id="PRAISEbutton" type="submit" name="button" value="Other" />
                </a>
 
-                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-talk" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                  <!--Save notes--> 
-                  <input class="btn btn-primary btn-xl" id="unique" type="submit" name="button" value="Save notes"/>
-                </a>
+               
+                  
 
                 <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-encourage" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                     <!--Save advice and feedback--> 
@@ -94,7 +92,7 @@
                         </div>
 
                         <div class="modal-body text-center">
-                          <h5 style="display: block;width:100%;text-align: center;margin-top: 3vh;margin-bottom:3vh;"> The device is helpful for the patient?</h5>
+                          <h5 style="display: block;width:100%;text-align: center;margin-top: 3vh;margin-bottom:3vh;"> How helpful was the device with today’s dressing activity?</h5>
 
                         <!--Face images to represent score from 5 - 1 (very helpful to not helpful)-->
                          <div class="btn-group" role="group" aria-label="First group">
@@ -113,7 +111,7 @@
 
                         <!--Save advices-->
                          <div class="">
-                          <h5 style="display: block;width:100%;text-align: center;">Share your adivces</h5>
+                          <h5 style="display: block;width:100%;text-align: center;"> how can we improve the system?</h5>
                           <textarea style="display: block;width:80%;height:30vh;margin-left: 10%;" id="adivces">
 
                   
@@ -156,6 +154,7 @@
                             var saveAdivce = document.getElementById("saveAdivce")
 
                             saveAdivce.onclick=function(){
+                              alert("Advice Saved")
                               socket.emit("saveAdvice",{
                                 data:good,
                                 notes:adivces.value.trim()
@@ -252,15 +251,27 @@
            <textarea class="notes" id="notes">
               FEEL FREE TO TAKE NOTES HERE
            </textarea>
+           <div class="btn-group" role="group" aria-label="Basic example">
+            <input class="btn btn-primary btn-xl" style="margin-left: 350%;margin-right:10%;margin-top:10px;" id="unique" type="submit" name="button" value="Save notes"/>
+
+             <input class="btn btn-primary btn-xl" style="margin-right: 20%;margin-top:10px;" id="clear" type="submit" name="button" value="Clear"/>
+            </div>
             <!--save notes helper functions-->
            <script type="text/javascript">       
                 var unique = document.getElementById("unique")
                 unique.onclick=function(){
-                  alert("save notes")
+                  alert("save notes to caregiver'log")
                   socket.emit("saveNotes",{
                     data:document.getElementById("notes").value.trim()
                   })
                 }  
+
+
+                var clear = document.getElementById("clear")
+                clear.onclick=function(){
+                  document.getElementById("notes").value=""
+                }
+                
             </script>
         </div>  
     </div>

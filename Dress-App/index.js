@@ -7,7 +7,22 @@ When it is bad, it is better than nothing
 var port = process.env.PORT || 3000
 
 //Get local ip argument from command input
-var LocalIP = process.argv[process.argv.length-1]
+var os = require('os');
+var opn = require('opn');
+
+
+var interfaces = os.networkInterfaces();
+var addresses = [];
+for (var k in interfaces) {
+    for (var k2 in interfaces[k]) {
+        var address = interfaces[k][k2];
+        if (address.family === 'IPv4' && !address.internal) {
+            addresses.push(address.address);
+        }
+    }
+}
+
+var LocalIP = addresses[0]
 
 var fs = require('fs');
 var static = require('node-static');
@@ -20,11 +35,19 @@ applet.use(express.static(__dirname + '/public'));
 var clients = 0;
 
 //run the server
-var app = applet.listen(port,LocalIP,()=>{
+var app = applet.listen(port,()=>{
     console.log(`server is up at`)
     console.log(`${LocalIP}:3000/ for caregiver's view`)
      console.log(`${LocalIP}:3000/patient for patient's view`)
+     opn(`http://${LocalIP}:3000/patient`);
+
 });
+
+function addLog(content){
+    var date = new Date()
+    var date = date.toLocaleString()
+    fs.appendFile("data/log.txt",date+"\n "+content)
+}
 
 //render the patient view
 applet.get("/patient",(req,res)=>{
@@ -52,6 +75,9 @@ applet.get("/patient",(req,res)=>{
             axios.get( `http://${IP}/SHIRT`)
             console.log("shirt lighted")
             console.log(`http://${IP}/SHIRT`)
+
+            //add button click to the log file
+            addLog("Shirt button clicked")
         })  
 
          //turn on the light of pants's drawer by sending a get http request to serial port server
@@ -59,13 +85,17 @@ applet.get("/patient",(req,res)=>{
             axios.get( `http://${IP}/PANTS`)
             console.log("Pants lighted")
             console.log(`http://${IP}/PANTS`)
+             //add button click to the log file
+            addLog("Pants button clicked")
         })
 
         //turn on the light of socks's drawer by sending a get http request to serial port server
         socket.on("LightSocks",function(){
             axios.get( `http://${IP}/SOCKS`)
             console.log("socks lighted")
-              console.log(`http://${IP}/SOCKS`)
+            console.log(`http://${IP}/SOCKS`)
+             //add button click to the log file
+            addLog("Socks button clicked")
         })
 
         //turn on the light of shoes's drawer by sending a get http request to serial port server
@@ -73,19 +103,30 @@ applet.get("/patient",(req,res)=>{
             axios.get( `http://${IP}/SHOES`)
             console.log("shoes lighted")
             console.log(`http://${IP}/SHOES`)
+              //add button click to the log file
+            addLog("Shoes button clicked")
+
+          
         })
+
+        var audioFiles = ['Open the drawer with the green light', 'Take out the shirt', 'Open the shirt', 'Turn the shirt around', 'Push your arm through the opening hole on one side', 'Now put your other arm through the opening hole on the other side', 'Bring the sides of the shirt together in front of you', 'Line up the buttons with the button holes', 'Push the buttons through the holes', 'Open the drawer with the green light', 'Take out the pants', 'Hold the pants in front of your legs', 'Turn the pants around', 'Sit on the chair', 'Put one leg in the pant', 'Put your other leg in the pant', 'Pull the pants up so you see your feet', 'Stand up', 'Zip up the pants', 'Button the pants', 'Open the drawer with the green light', 'Take out the socks', 'Sit on the chair', 'Put on the socks', 'Open the drawer with the green light', 'Take out the shoes', 'Sit on the chair', 'Put on the shoes', 'Open the drawer with the green light', 'Take out the glasses', 'Put on the glasses', 'Take off your pajamas', 'Take out the underwear', 'Put on the underwear']
 
         //deliver the instructions 
         socket.on("playAudio",function(data){
+
             io.emit("play",data)
-            console.log(data)
+
+           
+            var date = new Date()
+    var date = date.toLocaleString()
+    fs.appendFile("data/log.txt",date+"\n  "+audioFiles[data.data])
         })
         
         //save notes
         socket.on("saveNotes",function(data){
             var date = new Date()
             var date = date.toLocaleString()
-            fs.appendFile("notes.txt",date+"\n"+data.data+"\n",(e)=>{
+            fs.appendFile("data/notes.txt",date+"\n "+data.data+"\n",(e)=>{
                 console.log(e)
             })
         })
@@ -94,7 +135,7 @@ applet.get("/patient",(req,res)=>{
         socket.on("saveAdvice",function(data){
              var date = new Date()
             var date = date.toLocaleString()
-            fs.appendFile("advice.txt",`${date}\nscore:${data.data}\nAdvice:${data.notes}\n\n\n`,(e)=>{
+            fs.appendFile("data/advice.txt",`${date}\nscore:${data.data}\nAdvice:${data.notes}\n\n\n`,(e)=>{
                 console.log(e)
             })
         })
