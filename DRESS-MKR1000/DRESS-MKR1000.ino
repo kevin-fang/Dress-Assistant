@@ -8,6 +8,11 @@
 #include <WiFi101.h>
 
 #include <Adafruit_NeoPixel.h>
+#include <ArduinoHttpClient.h>
+
+
+
+
 
 /*
  * Make sure you have Neopixels and Wifi101 libraries installed, along with the MKR1000 Board
@@ -18,9 +23,12 @@
 // the IP address for the shield:
 // IPAddress ip(192,168,1,116);  
 
-char ssid[] = "";      //  your network SSID (name)
-char pass[] = "";   // your network password
+char ssid[] = "smart_environment";      //  your network SSID (name)
+char pass[] = "research";   // your network password
 int keyIndex = 0;                 // your network key Index number (needed only for WEP)
+
+char serverAddress[] = "192.168.1.103";  // server address
+ int port = 3000;
 
 int ledpin = 6;
 bool val = true;
@@ -44,7 +52,8 @@ void setup() {
   Serial.begin(9600);      // initialize serial communication
   Serial.print("Start Serial ");
   pinMode(ledpin, OUTPUT);      // set the LED pin mode
-
+ 
+  
   //set up the LEDs
   topDrawerLED.begin();
   secondDrawerLED.begin();
@@ -70,8 +79,9 @@ void setup() {
     digitalWrite(ledpin, HIGH);
     // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
     status = WiFi.begin(ssid,pass);
+    
     // wait 10 seconds for connection:
-    delay(10000);
+   
   }
 
   server.begin();                           // start the web server on port 80
@@ -79,9 +89,13 @@ void setup() {
   digitalWrite(ledpin, HIGH);
 }
 
+WiFiClient client;  
 void loop() {
-  WiFiClient client = server.available();   // listen for incoming clients
+   client = server.available();   // listen for incoming clients
+  
 
+  
+ 
   if (client) {                             // if you get a client,
     Serial.println("new client");           // print a message out the serial port
     String currentLine = "";                // make a String to hold incoming data from the client
@@ -151,6 +165,13 @@ void loop() {
   }
 }
 
+String ipToString(IPAddress ip){
+  String s="";
+  for (int i=0; i<4; i++)
+    s += i  ? "." + String(ip[i]) : String(ip[i]);
+  return s;
+}
+
 void printWifiStatus() {
   // print the SSID of the network you're attached to:
   Serial.print("SSID: ");
@@ -158,6 +179,20 @@ void printWifiStatus() {
 
   // print your WiFi shield's IP address:
   IPAddress ip = WiFi.localIP();
+  Serial.println("hello");
+ 
+  
+ 
+   HttpClient gan = HttpClient(client, serverAddress, port);
+   String Ip_string = ipToString(ip);
+   
+  gan.get("/"+Ip_string);
+  
+  
+ 
+  
+
+  
   Serial.print("IP Address: ");
   Serial.println(ip);
 

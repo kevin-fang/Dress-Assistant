@@ -9,7 +9,7 @@ var port = process.env.PORT || 3000
 //Get local ip argument from command input
 var os = require('os');
 var opn = require('opn');
-
+const url = require("url")
 
 var interfaces = os.networkInterfaces();
 var addresses = [];
@@ -39,7 +39,7 @@ var app = applet.listen(port,()=>{
     console.log(`server is up at`)
     console.log(`${LocalIP}:3000/ for caregiver's view`)
      console.log(`${LocalIP}:3000/patient for patient's view`)
-     opn(`http://${LocalIP}:3000/patient`);
+     opn(`http://${LocalIP}:3000/patient`,{app:"firefox"});
 
 });
 
@@ -54,8 +54,21 @@ applet.get("/patient",(req,res)=>{
     res.sendFile('public/instructionForPatient.html' , { root : __dirname});
 })
 
+applet.get("/chat",(req,res)=>{
+    res.sendFile("public/chatroom.html",{root:__dirname})
+})
 
-    var IP=""
+var IP=""
+applet.get("/:ip",(req,res)=>{
+    var array = req.url.split("/")
+    var ip = array[array.length-1]
+    IP = ip
+    console.log(IP)
+   
+})
+
+
+    
     //establish socket.io
     var io = require('socket.io')(app);
     io.on('connection', function(socket) {
