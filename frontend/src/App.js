@@ -1,23 +1,78 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import TextField from '@material-ui/core/TextField'
 
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
+//import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button'
 import './App.css';
 import Divider from '@material-ui/core/Divider';
-
-let buttons = [["tops-button", "Tops"], ["bottoms-button", "Bottoms"], ["socks-button", "Socks"], ["shoes-button", "Shoes"], ["others-button", "Others"]]
+import InputAdornment from '@material-ui/core/InputAdornment';
+import RecordVoiceOver from '@material-ui/icons/RecordVoiceOver'
+import Help from '@material-ui/icons/Help'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-        currentClothes: 'tops-button'
+        currentClothes: 'tops-button',
+        recording: false,
+        ip: "192.168.1.3",
+        numDots: 0,
+        dotsInterval: null
     }
+  }
+
+  componentDidMount = () => {
+    document.addEventListener("keydown", this.spaceFunction, false);
+    document.addEventListener("keyup", this.spaceFunction, false);
+  }
+
+  stopRecording = () => {
+    clearInterval(this.state.dotsInterval)
+    this.setState({
+      recording: false
+    })
+  }
+
+  startRecording = () => {
+    this.setState({
+        recording: true
+    })
+    let dotsInterval = setInterval(() => {
+      this.setState({
+        numDots: (this.state.numDots + 1) % 3
+      })
+    }, 500)
+    this.setState({
+      dotsInterval
+    })
+  }
+
+  toggleRecording = () => {
+    if (this.state.recording) {
+      this.stopRecording()
+    } else {
+      this.startRecording()
+    }
+  }
+
+  spaceFunction = (event) => {
+    //console.log(event)
+    if (event.keyCode === 32 && event.type === "keyup") {
+      this.stopRecording()
+      event.preventDefault()
+    } else if (event.keyCode === 32 && !this.state.recording) {
+      this.startRecording()
+      event.preventDefault()
+    } else {
+      //console.log(event.key)
+    }
+  }
+
+  getDots = () => {
+    return ".".repeat(this.state.numDots + 1)
   }
 
   onClothesClick = (id) => {
@@ -38,7 +93,7 @@ class App extends Component {
     } else if (this.state.currentAction === id) {
       return "secondary"
     } else {
-      return "primary"
+      return "default"
     }
   }
 
@@ -65,7 +120,10 @@ class App extends Component {
         <Card>
           <CardContent>
             <Typography className="App" style={{fontSize: 40}}>
-              &lt;DRESS&gt;
+              DRESS
+            </Typography>
+            <Typography className="App" color="textSecondary" style={{fontSize: 12}}>
+              Currently connected to: {this.state.ip}
             </Typography>
             <Divider inset style={{margin: 10}}/>
             <div className="side-by-side" style={{paddingTop: 20}}>
@@ -152,11 +210,25 @@ class App extends Component {
                   multiline
                   style={{minWidth: 500, marginTop: 15}}
                   rows="4"
-                /><br/>
-                <Button style={{margin: 10}} color='secondary'>Save note</Button><br/>
-                <Button style={{color: 'red'}}>Record</Button>
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment>
+                        <Button style={{}} color='secondary'>Save</Button>
+                      </InputAdornment>
+                    ),
+                  }}
+                ></TextField><br/>
+                <Button onClick={this.toggleRecording} style={{color: 'red', marginTop: 10, marginBottom: 5, minWidth: 300, textAlign: 'left'}}>
+                  <RecordVoiceOver />
+                  <div style={{marginLeft: 10}}>{this.state.recording ? <div>Currently recording{this.getDots()}</div> : <div>Talk to patient (or hold space)</div>}</div>
+                </Button><br/>
+                <Button>
+                  <Help />
+                  <div style={{marginLeft: 10}}>Help</div>
+                </Button>
               </div>
-            </div>
+            </div><br/>
+            Created at the NYU-X Lab in the NYU Rory Meyers College of Nursing in collaboration with the NYU Tandon School of Engineering.
           </CardContent>
         </Card>
       </div>
